@@ -107,8 +107,16 @@ const ferraris = cars.filter((car) => car.brand === "Ferrari");
 
 //Create a function nineties that returns all the cars with models between 1980 and 1990
 const nineties = cars.filter((car) => car.model >= 1980 && car.model <= 1990);
-console.log(nineties);
+//console.log(nineties);
 
 //Create a function list that returns an array of strings with the same number of cars. 
 //Each element should contain the string “This from costs $” (e.g. for the first element 
 //it should say “This Mazda from 1989 costs $5241”).
+const list = cars.map((car) => {
+    return `This ${car.brand} from ${car.model} costs $${car.price}`
+});
+//console.log(list);
+
+//Create a function bmwSum that returns the sum of all prices of the BMW cars.
+const bmwSum = cars.filter(car => car.brand === 'BMW').reduce((acc, car) => acc + car.price,0);
+console.log(bmwSum);
